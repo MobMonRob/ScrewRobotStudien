@@ -19,6 +19,8 @@ ros::Publisher ply_publisher;
 
 int main(int argc, char* argv[])
 {
+    pcl::console::setVerbosityLevel(pcl::console::VERBOSITY_LEVEL::L_ALWAYS);
+
     ROS_INFO("Node started.");
     ros::init(argc, argv, "ply_reader_node");
     ros::NodeHandle node;

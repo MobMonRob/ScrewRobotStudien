@@ -80,7 +80,7 @@ void initializeDynamicReconfigure(dynamic_reconfigure::Server<screwer_node::Scre
 
 void initializeTransformListener(tf::TransformListener& listener)
 {
-    if(listener.waitForTransform("/ur_base", "/camera", ros::Time(0), ros::Duration(10.0)))
+    if(listener.waitForTransform("/ur_base", "/camera", ros::Time(0), ros::Duration(30.0)))
     {
         ROS_INFO("Transform-Listener initialized.");
     }

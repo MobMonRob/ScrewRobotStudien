@@ -15,9 +15,9 @@ int main(int argc, char** argv)
     robot_pose_subscriber = node.subscribe("/screwer_pose", 1, robotPoseCallback);
     tf_broadcaster = new tf::TransformBroadcaster;
 
-    /*
+    
     ros::Rate rate(10.0);
-    while (node.ok())
+    while (node.ok() && argv[1])
     {
         tf::Transform transform_1;
         tf::Transform transform_2;
@@ -37,8 +37,7 @@ int main(int argc, char** argv)
         tf_broadcaster->sendTransform(tf::StampedTransform(transform_2, time, "/screwer", "/camera"));
         rate.sleep();
     }
-    */
-
+    
     ros::spin();
 }
 
