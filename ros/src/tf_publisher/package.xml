@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>tf_publisher</name>
+  <version>0.0.0</version>
+  <description>tf_publisher package</description>
+  <maintainer email="stern.leon@student.dhbw-karlsruhe.de">Leon Stern</maintainer>
+  <license>MIT</license>
+  <url type="website">https://github.com/MobMonRob/ScrewRobotStudien</url>
+  <author email="stern.leon@student.dhbw-karlsruhe.de">Leon Stern</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <exec_depend>roscpp</exec_depend>
+  <build_depend>tf</build_depend>
+  <build_export_depend>tf</build_export_depend>
+  <exec_depend>tf</exec_depend>
+</package>
