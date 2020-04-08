@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>dhbw_screw_localization</name>
+  <version>0.0.0</version>
+  <description>dhbw_screw_localization package</description>
+  <maintainer email="leon.stern@protonmail.com">Leon Stern</maintainer>
+  <license>MIT</license>
+  <!-- <url type="website">http://wiki.ros.org/dhbw_screw_localization</url> -->
+  <author email="leon.stern@protonmail.com">Leon Stern</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <exec_depend>roscpp</exec_depend>
+  <build_depend>pcl_ros</build_depend>
+  <build_export_depend>pcl_ros</build_export_depend>
+  <exec_depend>pcl_ros</exec_depend>
+</package>
+
