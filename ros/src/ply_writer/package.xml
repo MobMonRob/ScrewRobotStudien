@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ply_writer</name>
+  <version>0.0.0</version>
+  <description>ply_writer package</description>
+  <maintainer email="stern.leon@student.dhbw-karlsruhe.de">Leon Stern</maintainer>
+  <license>Apache-2.0</license>
+  <url type="website">https://github.com/MobMonRob/ScrewRobotStudien</url>
+  <author email="stern.leon@student.dhbw-karlsruhe.de">Leon Stern</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <exec_depend>roscpp</exec_depend>
+  <build_depend>pcl_ros</build_depend>
+  <build_export_depend>pcl_ros</build_export_depend>
+  <exec_depend>pcl_ros</exec_depend>
+</package>
