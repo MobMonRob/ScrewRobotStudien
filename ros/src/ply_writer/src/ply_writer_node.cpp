@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
     ros::init(argc, argv, "ply_writer_node");
     ros::NodeHandle node;
 
-    ros::Subscriber sub = node.subscribe<PCloud>("/screw_pcloud", 1, callback);
+    ros::Subscriber sub = node.subscribe<PCloud>("/screw_pcloud", 1000, callback);
 
     ply_path = argv[1];
 
