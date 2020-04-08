@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
 
     StringQueue plys = getFileNamesInDictionary("/home/lstern/dhbw-screwing-robot/intelrealsense_d435/data/0_grad/recording_1/plys/");
 
-    while(ros::ok())
+    while(ros::ok() && plys.size() > 0)
     {
         PCloudPtr pCloud(new PCloud());
         if (pcl::io::loadPLYFile<pcl::PointXYZ>(plys.front(), *pCloud) == -1)
