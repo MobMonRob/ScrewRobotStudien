@@ -1,4 +1,5 @@
 #include "dhbw_screw_localization/PclScrewRecognitionTools.h"
+#include <ros/ros.h>
 
 const std::map<PclPassThroughFieldName, std::string> PclScrewRecognitionTools::m_pt_field_name = { {PclPassThroughFieldName::X, "x"}, {PclPassThroughFieldName::Y, "y"}, {PclPassThroughFieldName::Z, "z"} };
 const std::map<PclSacModel, int> PclScrewRecognitionTools::m_sac_model = { {PclSacModel::PLANE, pcl::SACMODEL_PLANE} };

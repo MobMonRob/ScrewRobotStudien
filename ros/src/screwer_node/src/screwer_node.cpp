@@ -204,8 +204,8 @@ void configureSvmClassificationParameter(screwer_node::ScrewerConfig& config)
 
 pcl::PointCloud<pcl::PointXYZ>::Ptr receiveInputPCloud(tf::TransformListener& listener)
 {  
-    pcl::PointCloud<pcl::PointXYZ>::ConstPtr pCloud(new pcl::PointCloud<pcl::PointXYZ>);    
-    while(!pCloud)
+    pcl::PointCloud<pcl::PointXYZ>::ConstPtr pCloud(nullptr);    
+    while(!pCloud.get())
     {
         ROS_INFO("Waiting for frame...");
         pCloud = ros::topic::waitForMessage<pcl::PointCloud<pcl::PointXYZ>>("/camera/depth/color/points", ros::Duration(1));
@@ -231,6 +231,7 @@ void publishResult(std::shared_ptr<PclScrew> screw)
 {
     if(screw.get())
     {
+        ROS_INFO("%d", screw->getPCloud().size());
         pcl::PointCloud<pcl::PointXYZ> screw_pcloud = screw->getPCloud();
         screw_pcloud.header.frame_id = "/ur_base";
 

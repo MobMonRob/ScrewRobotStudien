@@ -16,7 +16,7 @@ long counter = 0;
 
 void callback(const PCloud::ConstPtr& msg)
 {
-    pcl::io::savePLYFile<pcl::PointXYZ>("/home/lstern/ScrewRobotStudien/ros" + std::to_string(counter++) + ".ply", *msg);
+    pcl::io::savePLYFile<pcl::PointXYZ>("/home/lstern/ScrewRobotStudien/ros/" + std::to_string(counter++) + ".ply", *msg);
 }
 
 int main(int argc, char* argv[])

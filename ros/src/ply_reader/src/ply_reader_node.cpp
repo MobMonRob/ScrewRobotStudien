@@ -34,8 +34,10 @@ int main(int argc, char* argv[])
             ROS_ERROR("Could not read *.ply-file.");
             exit(0);
         }
+
         pCloud->header.frame_id = "/camera";
         ply_publisher.publish(*pCloud);
+        plys.pop();
     }
 
     ros::spin();
