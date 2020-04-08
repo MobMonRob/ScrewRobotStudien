@@ -3,10 +3,10 @@
   <name>dhbw_screw_localization</name>
   <version>0.0.0</version>
   <description>dhbw_screw_localization package</description>
-  <maintainer email="leon.stern@protonmail.com">Leon Stern</maintainer>
-  <license>MIT</license>
-  <!-- <url type="website">http://wiki.ros.org/dhbw_screw_localization</url> -->
-  <author email="leon.stern@protonmail.com">Leon Stern</author>
+  <maintainer email="stern.leon@student.dhbw-karlsruhe.de">Leon Stern</maintainer>
+  <license>Apache-2.0</license>
+  <url type="website">https://github.com/MobMonRob/ScrewRobotStudien</url>
+  <author email="stern.leon@student.dhbw-karlsruhe.de">Leon Stern</author>
 
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roscpp</build_depend>
