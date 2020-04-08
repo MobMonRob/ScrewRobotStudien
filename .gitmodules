@@ -1,3 +1,6 @@
 [submodule "libraries/librealsense"]
 	path = libraries/librealsense
 	url = https://github.com/IntelRealSense/librealsense
+[submodule "ros/src/realsense-ros"]
+	path = ros/src/realsense-ros
+	url = https://github.com/IntelRealSense/realsense-ros
