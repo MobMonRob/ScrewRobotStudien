@@ -24,7 +24,8 @@ int main(int argc, char* argv[])
     ros::NodeHandle node;
     ply_publisher = node.advertise<sensor_msgs::PointCloud2>("/camera/depth/color/points", 1000);
 
-    StringQueue plys = getFileNamesInDictionary("/home/lstern/dhbw-screwing-robot/intelrealsense_d435/data/0_grad/recording_1/plys/");
+    std::string ply_path = argv[1];
+    StringQueue plys = getFileNamesInDictionary(ply_path.c_str());
 
     while(ros::ok() && plys.size() > 0)
     {
