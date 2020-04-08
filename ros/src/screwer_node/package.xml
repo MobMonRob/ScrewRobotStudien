@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>screwer_node</name>
+  <version>0.0.0</version>
+  <description>screwer_node package</description>
+  <maintainer email="stern.leon@student.dhbw-karlsruhe.de">Leon Stern</maintainer>
+  <license>Apache-2.0</license>
+  <url type="website">https://github.com/MobMonRob/ScrewRobotStudien</url>
+  <author email="stern.leon@student.dhbw-karlsruhe.de">Leon Stern</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <exec_depend>roscpp</exec_depend>>
+  <build_depend>dhbw_screw_localization</build_depend>
+  <build_export_depend>dhbw_screw_localization</build_export_depend>
+  <exec_depend>dhbw_screw_localization</exec_depend>
+  <build_depend>dynamic_reconfigure</build_depend>
+  <exec_depend>dynamic_reconfigure</exec_depend>
+</package>
