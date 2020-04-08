@@ -1,0 +1,7 @@
+<launch>
+    <node pkg="tf_publisher" type="tf_publisher_node" name="tf_publisher_node" args="true" required="true" />
+    <node pkg="ply_writer" type="ply_writer_node" name="ply_writer_node" args="/home/lstern/ScrewRobotStudien/data/clustered/" required="true" />
+    <node pkg="screwer_node" type="screwer_node_node" name="screwer_node" required="true" />
+    <node pkg="ply_reader" type="ply_reader_node" name="ply_reader_node" args="/home/lstern/ScrewRobotStudien/data/raw/" required="true" />
+    <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="rqt_reconfigure" respawn="true" />
+</launch>
