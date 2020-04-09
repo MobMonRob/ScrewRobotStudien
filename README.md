@@ -51,7 +51,7 @@ ROS-Node, welche die Ablaufsteuerung der Anwendung übernimmt. Die Punktwolke wi
     sudo rosdep init
     rosdep update
 
-#### Catkin tools, CMake installieren
+#### Catkin installieren
     
     sudo apt install python-pip
     sudo pip install -U catkin_tools
