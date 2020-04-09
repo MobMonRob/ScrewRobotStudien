@@ -236,7 +236,7 @@ void publishResult(std::shared_ptr<PclScrew> screw)
         screw_pcloud.header.frame_id = "/ur_base";
 
         screw_pcloud_publisher.publish(screw_pcloud);
-        ROS_INFO("Result published to %s (Pointcloud)", "/screw_pcloud", "/screw_pose");
+        ROS_INFO("Result published to %s (Pointcloud)", "/screw_pcloud");
         return;
     }
     ROS_WARN("No result.");
