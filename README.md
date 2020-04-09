@@ -31,28 +31,53 @@ ROS-Library, welche die bildverarbeitenden Operationen, sowie die Klassifikation
 ### screwer_node
 ROS-Node, welche die Ablaufsteuerung der Anwendung übernimmt. Die Punktwolke wird entgegengenommen, transformiert und der Schraubenerkennung (dhbw_screw_localization) übergeben.
 
-## Verwendung
+## Verwendung (Ubuntu)
 
+#### Repository klonen
     git clone https://github.com/MobMonRob/ScrewRobotStudien.git
+    cd ScrewRobotStudien
+
+#### ROS installieren
+
+    sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu `lsb_release -sc` main" > /etc/apt/sources.list.d/ros-latest.list'
     
-    ...
+    wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
+
+    sudo apt update
+    sudo apt install ros-melodic-desktop-full
+    source /opt/ros/melodic/setup.bash
+
+    sudo apt install python-rosdep
+    sudo rosdep init
+    rosdep update
+
+#### Catkin tools, CMake installieren
     
+    sudo apt install python-pip
+    sudo pip install -U catkin_tools
+
+#### Build
+
+    cd ros
+    catkin build
+    source devel/setup.bash
+
     
 ### Dynamische Konfiguration
-Die wesentlichen Parameter der Anwendung können dynamisch während der Laufzeit konfiguriert werden. Bei Verwendung der bestehenden Launch-Files öffnet sich automatisch ein Fenster.
+Die wesentlichen Parameter der Anwendung können dynamisch während der Laufzeit konfiguriert werden. Bei Verwendung der bestehenden Launch-Files öffnet sich automatisch ein Fenster. Für die Beispiel-Daten muss einmal die `default.yaml`-Konfiguration aus `screwer_node/cfg` geladen werden, damit diese aktiv sind.
 
     rosrun rqt_reconfigure rqt_reconfigure
 
 ![Komponenten](./documentation/Dynamische_Konfiguration.png)
 
 ### Training
-Punktwolken werden ausschließlich geclustert und nicht klassifiziert. Dieser Modus kann genutzt werden, um Trainingsdaten (Cluster) aus den Punktwolken zu generieren. Diese können anschließend durch die tools [ply-classifier](https://github.com/MobMonRob/ScrewRobotStudien/tree/master/tools/ply-classifier) und [svm-trainer](https://github.com/MobMonRob/ScrewRobotStudien/tree/master/tools/svm-trainer) zu einem SVM-Modell weiterverarbeitet werden.
+Punktwolken werden ausschließlich geclustert und nicht klassifiziert. Dieser Modus kann genutzt werden, um Trainingsdaten (Cluster) aus den Punktwolken zu generieren.  Diese können anschließend durch die tools [ply-classifier](https://github.com/MobMonRob/ScrewRobotStudien/tree/master/tools/ply-classifier) und [svm-trainer](https://github.com/MobMonRob/ScrewRobotStudien/tree/master/tools/svm-trainer) zu einem SVM-Modell weiterverarbeitet werden.
 
 Dafür werden die Hilfs-Nodes `ply_reader` und `ply_writer` verwendet, welche die Ein- und Ausgabe aus bzw. in `*.ply`-Dateien ermöglichen.
 
         roslaunch ros/launch/training.launch
 
-Wichtig ist weiterhin, dass die Klassifizierung in der SVM mithilfe der dynamischen Konfiguration deaktiviert wird.
+Wichtig ist weiterhin, dass die Klassifizierung in der SVM mithilfe der dynamischen Konfiguration deaktiviert wird. Dateipfade können bzw. müssen im Launch-File angepasst werden.
 
 ### "Produktiv"
 Punktwolken werden durch die trainierte SVM klassifiziert, um "falsche" Cluster zu filtern. Es werden die Punktwolken der Kamera verwendet. Die Ausgabe erfolgt auf das Topic `/screw_pcloud`. Neben der Punktwolke enthält das Ergebnis der Schraubenerkennung auch eine orientierte Bounding-Box, welche unter anderem die Ausrichtung der Schraube beschreibt.
@@ -60,5 +85,3 @@ Punktwolken werden durch die trainierte SVM klassifiziert, um "falsche" Cluster 
 Die Klassifizierung mittels SVM muss in der dynamischen Konfiguration aktiviert und entsprechend auf das zu verwendende Modell konfiguriert sein.
 
         roslaunch ros/launch/productive.launch
-
-
