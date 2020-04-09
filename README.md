@@ -13,6 +13,8 @@ Grundsätzlich fehlt in diesem Zusammenhang also die Steuerung des Roboters.
 
 ***
 
+![Punktwolke Eingabe](./documentation/Raw_Punktwolke.png)
+
 ## Komponenten
 
 ![Komponenten](./documentation/Komponenten.png)
