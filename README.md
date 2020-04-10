@@ -80,7 +80,7 @@ Dafür werden die Hilfs-Nodes `ply_reader` und `ply_writer` verwendet, welche di
 Wichtig ist weiterhin, dass die Klassifizierung in der SVM mithilfe der dynamischen Konfiguration deaktiviert wird. Dateipfade können bzw. müssen im Launch-File angepasst werden.
 
 ### "Produktiv"
-Punktwolken werden durch die trainierte SVM klassifiziert, um "falsche" Cluster zu filtern. Es werden die Punktwolken der Kamera verwendet. Die Ausgabe erfolgt auf das Topic `/screw_pcloud`. Neben der Punktwolke enthält das Ergebnis der Schraubenerkennung auch eine orientierte Bounding-Box, welche unter anderem die Ausrichtung der Schraube beschreibt.
+Punktwolken werden durch die trainierte SVM klassifiziert, um "falsche" Cluster zu filtern. Es werden die Punktwolken der Kamera verwendet. Die verwendete Konfiguration der RealSense D435 ist in `ros/launch/config/` zu finden. Die Ausgabe erfolgt auf das Topic `/screw_pcloud`. Neben der Punktwolke enthält das Ergebnis der Schraubenerkennung auch eine orientierte Bounding-Box, welche unter anderem die Ausrichtung der Schraube beschreibt.
 
 Die Klassifizierung mittels SVM muss in der dynamischen Konfiguration aktiviert und entsprechend auf das zu verwendende Modell konfiguriert sein.
 
