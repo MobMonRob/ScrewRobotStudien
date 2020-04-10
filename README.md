@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/MobMonRob/ScrewRobotStudien/workflows/CI/badge.svg)](https://github.com/MobMonRob/ScrewRobotStudien/actions)
+
 # ScrewRobotStudien
 Dieses Repository enthält in der aktuellen Fassung (Mai 2020) die wesentlichen Bestandteile der Bildverarbeitung, um Schrauben inklusive deren Ausrichtung in Punktwolken zu erkennen. Dabei handelt es sich um einen Ansatz, der durchaus Alternativen besitzt. Das zugrundeliegende Szenario sieht einen kollaborativen Roboter vor, der eine von Menschen eingesteckte Schraube selbständig erkennt und vollständig einschraubt.
 
